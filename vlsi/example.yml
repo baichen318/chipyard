@@ -2,9 +2,9 @@
 # Technology used is ASAP7
 vlsi.core.technology: asap7
 # Specify dir with ASAP7 tarball
-technology.asap7.tarball_dir: ""
+technology.asap7.tarball_dir: "/research/d3/cbai/downloads/ASAP7/v1p5"
 
-vlsi.core.max_threads: 12
+vlsi.core.max_threads: 32
 
 # General Hammer Inputs
 
@@ -46,33 +46,33 @@ par.generate_power_straps_options:
 
 # Placement Constraints
 # For ASAP7, all numbers must be 4x larger than final GDS
-vlsi.inputs.placement_constraints:
-  - path: "Sha3AccelwBB"
-    type: toplevel
-    x: 0
-    y: 0
-    width: 300
-    height: 300
-    margins:
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-  - path: "Sha3AccelwBB/dco"
-    type: hardmacro
-    x: 108
-    y: 108
-    width: 128
-    height: 128
-    orientation: r0
-    top_layer: M9
-  - path: "Sha3AccelwBB/place_obs_bottom"
-    type: obstruction
-    obs_types: ["place"]
-    x: 0
-    y: 0
-    width: 300
-    height: 1.08 # 1 core site tall, necessary to avoid shorts
+# vlsi.inputs.placement_constraints:
+#   - path: "Sha3AccelwBB"
+#     type: toplevel
+#     x: 0
+#     y: 0
+#     width: 300
+#     height: 300
+#     margins:
+#       left: 0
+#       right: 0
+#       top: 0
+#       bottom: 0
+#   - path: "Sha3AccelwBB/dco"
+#     type: hardmacro
+#     x: 108
+#     y: 108
+#     width: 128
+#     height: 128
+#     orientation: r0
+#     top_layer: M9
+#   - path: "Sha3AccelwBB/place_obs_bottom"
+#     type: obstruction
+#     obs_types: ["place"]
+#     x: 0
+#     y: 0
+#     width: 300
+#     height: 1.08 # 1 core site tall, necessary to avoid shorts
 
 # Pin placement constraints
 vlsi.inputs.pin_mode: generated
@@ -129,12 +129,12 @@ vlsi.core.sram_generator_tool_path_meta: "append"
 vlsi.core.synthesis_tool: "genus"
 vlsi.core.synthesis_tool_path: ["hammer-cadence-plugins/synthesis"]
 vlsi.core.synthesis_tool_path_meta: "append"
-synthesis.genus.version: "1813"
+synthesis.genus.version: "171"
 # Innovus options
 vlsi.core.par_tool: "innovus"
 vlsi.core.par_tool_path: ["hammer-cadence-plugins/par"]
 vlsi.core.par_tool_path_meta: "append"
-par.innovus.version: "181"
+par.innovus.version: "162"
 par.innovus.design_flow_effort: "standard"
 par.inputs.gds_merge: true
 # Calibre options
@@ -142,3 +142,6 @@ vlsi.core.drc_tool: "calibre"
 vlsi.core.drc_tool_path: ["hammer-mentor-plugins/drc"]
 vlsi.core.lvs_tool: "calibre"
 vlsi.core.lvs_tool_path: ["hammer-mentor-plugins/lvs"]
+# Simulation
+vlsi.core.sim_tool: "vcs"
+vlsi.core.sim_tool_path: ['hammer-synopsys-plugins/sim']
