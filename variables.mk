@@ -139,7 +139,7 @@ output_dir=$(sim_dir)/output/$(long_name)
 PERMISSIVE_ON=+permissive
 PERMISSIVE_OFF=+permissive-off
 BINARY ?=
-override SIM_FLAGS += +dramsim +max-cycles=$(timeout_cycles)
+override SIM_FLAGS += +dramsim +max-cycles=$(timeout_cycles) +dump-start=100
 VERBOSE_FLAGS ?= +verbose
 sim_out_name = $(subst $() $(),_,$(notdir $(basename $(BINARY))).$(long_name))
 

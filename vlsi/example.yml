@@ -46,33 +46,33 @@ par.generate_power_straps_options:
 
 # Placement Constraints
 # For ASAP7, all numbers must be 4x larger than final GDS
-# vlsi.inputs.placement_constraints:
-#   - path: "Sha3AccelwBB"
-#     type: toplevel
-#     x: 0
-#     y: 0
-#     width: 300
-#     height: 300
-#     margins:
-#       left: 0
-#       right: 0
-#       top: 0
-#       bottom: 0
-#   - path: "Sha3AccelwBB/dco"
-#     type: hardmacro
-#     x: 108
-#     y: 108
-#     width: 128
-#     height: 128
-#     orientation: r0
-#     top_layer: M9
-#   - path: "Sha3AccelwBB/place_obs_bottom"
-#     type: obstruction
-#     obs_types: ["place"]
-#     x: 0
-#     y: 0
-#     width: 300
-#     height: 1.08 # 1 core site tall, necessary to avoid shorts
+vlsi.inputs.placement_constraints:
+  - path: "BoomTileBB"
+    type: toplevel
+    x: 0
+    y: 0
+    width: 2000
+    height: 2000
+    margins:
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+  # - path: "Sha3AccelwBB/dco"
+  #   type: hardmacro
+  #   x: 108
+  #   y: 108
+  #   width: 128
+  #   height: 128
+  #   orientation: r0
+  #   top_layer: M9
+  # - path: "Sha3AccelwBB/place_obs_bottom"
+  #   type: obstruction
+  #   obs_types: ["place"]
+  #   x: 0
+  #   y: 0
+  #   width: 300
+  #   height: 1.08 # 1 core site tall, necessary to avoid shorts
 
 # Pin placement constraints
 vlsi.inputs.pin_mode: generated
@@ -112,6 +112,1016 @@ vlsi.technology.extra_libraries:
       supplies:
         VDD: "0.77 V"
         GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW1024x8_lib/SRAM1RW1024x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW1024x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW1024x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW1024x8_lib/SRAM1RW1024x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW1024x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW1024x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW128x46_lib/SRAM1RW128x46_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x46_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x46_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW128x46_lib/SRAM1RW128x46_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x46_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x46_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW128x48_lib/SRAM1RW128x48_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x48_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x48_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW128x48_lib/SRAM1RW128x48_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x48_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x48_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW128x8_lib/SRAM1RW128x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW128x8_lib/SRAM1RW128x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW128x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW128x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x128_lib/SRAM1RW256x128_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x128_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x128_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x128_lib/SRAM1RW256x128_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x128_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x128_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x32_lib/SRAM1RW256x32_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x32_lib/SRAM1RW256x32_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x46_lib/SRAM1RW256x46_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x46_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x46_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x46_lib/SRAM1RW256x46_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x46_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x46_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x48_lib/SRAM1RW256x48_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x48_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x48_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x48_lib/SRAM1RW256x48_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x48_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x48_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x8_lib/SRAM1RW256x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW256x8_lib/SRAM1RW256x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW256x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW256x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW32x50_lib/SRAM1RW32x50_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW32x50_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW32x50_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW32x50_lib/SRAM1RW32x50_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW32x50_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW32x50_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW512x128_lib/SRAM1RW512x128_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x128_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x128_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW512x128_lib/SRAM1RW512x128_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x128_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x128_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW512x32_lib/SRAM1RW512x32_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW512x32_lib/SRAM1RW512x32_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW512x8_lib/SRAM1RW512x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW512x8_lib/SRAM1RW512x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW512x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW512x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW64x128_lib/SRAM1RW64x128_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x128_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x128_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW64x128_lib/SRAM1RW64x128_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x128_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x128_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW64x32_lib/SRAM1RW64x32_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW64x32_lib/SRAM1RW64x32_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW64x34_lib/SRAM1RW64x34_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x34_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x34_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW64x34_lib/SRAM1RW64x34_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x34_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x34_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW64x8_lib/SRAM1RW64x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM1RW64x8_lib/SRAM1RW64x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM1RW64x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM1RW64x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW128x16_lib/SRAM2RW128x16_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW128x16_lib/SRAM2RW128x16_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW128x32_lib/SRAM2RW128x32_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW128x32_lib/SRAM2RW128x32_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW128x4_lib/SRAM2RW128x4_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x4_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x4_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW128x4_lib/SRAM2RW128x4_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x4_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x4_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW128x8_lib/SRAM2RW128x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW128x8_lib/SRAM2RW128x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW128x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW128x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x16_lib/SRAM2RW16x16_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x16_lib/SRAM2RW16x16_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x16_lib/SRAM2RW16x16_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x16_lib/SRAM2RW16x16_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x32_lib/SRAM2RW16x32_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x32_lib/SRAM2RW16x32_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x4_lib/SRAM2RW16x4_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x4_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x4_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x4_lib/SRAM2RW16x4_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x4_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x4_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x8_lib/SRAM2RW16x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW16x8_lib/SRAM2RW16x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW16x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW16x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x16_lib/SRAM2RW32x16_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x16_lib/SRAM2RW32x16_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x22_lib/SRAM2RW32x22_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x22_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x22_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x22_lib/SRAM2RW32x22_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x22_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x22_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x32_lib/SRAM2RW32x32_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x32_lib/SRAM2RW32x32_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x39_lib/SRAM2RW32x39_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x39_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x39_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x39_lib/SRAM2RW32x39_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x39_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x39_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x4_lib/SRAM2RW32x4_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x4_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x4_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x4_lib/SRAM2RW32x4_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x4_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x4_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x8_lib/SRAM2RW32x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW32x8_lib/SRAM2RW32x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW32x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW32x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW64x16_lib/SRAM2RW64x16_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW64x16_lib/SRAM2RW64x16_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x16_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x16_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW64x32_lib/SRAM2RW64x32_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW64x32_lib/SRAM2RW64x32_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x32_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x32_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW64x4_lib/SRAM2RW64x4_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x4_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x4_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW64x4_lib/SRAM2RW64x4_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x4_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x4_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW64x8_lib/SRAM2RW64x8_PVT_0P63V_100C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "100 C"
+      supplies:
+        VDD: "0.63 V"
+        GND: "0 V"
+  - library:
+      nldm liberty file_deepsubst_meta: "local"
+      nldm liberty file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lib/SRAM2RW64x8_lib/SRAM2RW64x8_PVT_0P77V_0C.lib"
+      lef file_deepsubst_meta: "local"
+      lef file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/lef/SRAM2RW64x8_x4.lef"
+      gds file_deepsubst_meta: "local"
+      gds file: "/uac/gds/cbai/cbai/research/chipyard/vlsi/hammer/src/hammer-vlsi/technology/asap7/sram_compiler/memories/gds/SRAM2RW64x8_x4.gds"
+      corner:
+        nmos: "fast"
+        pmos: "fast"
+        temperature: "0 C"
+      supplies:
+        VDD: "0.77 V"
+        GND: "0 V"
+
+
 
 # Because the DCO is a dummy layout, we treat it as a physical-only cell
 par.inputs.physical_only_cells_mode: append
@@ -121,7 +1131,7 @@ par.inputs.physical_only_cells_list:
 # SRAM Compiler compiler options
 vlsi.core.sram_generator_tool: "sram_compiler"
 # You should specify a location for the SRAM generator in the tech plugin
-vlsi.core.sram_generator_tool_path: []
+vlsi.core.sram_generator_tool_path: ["hammer/src/hammer-vlsi/technology/asap7"]
 vlsi.core.sram_generator_tool_path_meta: "append"
 
 # Tool options. Replace with your tool plugin of choice.
@@ -134,7 +1144,7 @@ synthesis.genus.version: "171"
 vlsi.core.par_tool: "innovus"
 vlsi.core.par_tool_path: ["hammer-cadence-plugins/par"]
 vlsi.core.par_tool_path_meta: "append"
-par.innovus.version: "162"
+par.innovus.version: "171"
 par.innovus.design_flow_effort: "standard"
 par.inputs.gds_merge: true
 # Calibre options

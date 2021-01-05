@@ -69,7 +69,7 @@ class ExampleDriver(CLIDriver):
             # The target step in any of the above calls may be a default step or another one of your custom hooks
 
             # This is an example of a technology-supplied hook
-            hammer_vlsi.HammerTool.make_post_insertion_hook("write_design", scale_final_gds)
+            # hammer_vlsi.HammerTool.make_post_insertion_hook("write_design", scale_final_gds)
         ]
         return extra_hooks 
 
