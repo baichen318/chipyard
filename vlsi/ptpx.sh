@@ -144,7 +144,7 @@ function ptpx_f() {
 				echo $file is wrong
 				exit 1
 			fi
-			sleep 5
+			sleep 15
 		done
 }
 
@@ -160,7 +160,7 @@ function ptpx() {
 			_save_path=${save_path}/${bmark}
 			_bmark=${path}/${class[i]}/${bmark}
 			_ptpx ${bmark} ${_save_path} ${_bmark} &
-			sleep 5
+			sleep 15
 		done
 	done
 }
