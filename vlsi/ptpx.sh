@@ -1,8 +1,8 @@
 #!/bin/bash
 
 path="/uac/gds/cbai/cbai/demo/chipyard/riscv-tools-install/riscv64-unknown-elf/share/riscv-tests"
-save_path="/uac/gds/cbai/cbai2/misc/SmallBoomConfig"
-power_path="/uac/gds/cbai/cbai/research/synopsys-flow/build/pt-pwr/SmallBoomConfig"
+save_path="/uac/gds/cbai/cbai2/misc/MegaBoomConfig"
+power_path="/uac/gds/cbai/cbai/research/synopsys-flow/build/pt-pwr/MegaBoomConfig"
 class=("isa" "benchmarks")
 
 function set_env() {
@@ -34,9 +34,9 @@ function _ptpx() {
 		set -o pipefail && ./simv +permissive +dramsim +max-cycles=1600000 -ucli -do run.tcl \
 			+verbose +vcdplusfile=${_save_path}/vcdplus.vpd \
 			+permissive-off ${_bmark} </dev/null 2> \
-			>(spike-dasm > ${_save_path}/${bmark}.chipyard.TestHarness.SmallBoomConfig.out) | \
-			tee ${_save_path}/${bmark}.chipyard.TestHarness.SmallBoomConfig.log
-		cat ${_save_path}/${bmark}.chipyard.TestHarness.SmallBoomConfig.out | grep "PASSED"
+			>(spike-dasm > ${_save_path}/${bmark}.chipyard.TestHarness.MegaBoomConfig.out) | \
+			tee ${_save_path}/${bmark}.chipyard.TestHarness.MegaBoomConfig.log
+		cat ${_save_path}/${bmark}.chipyard.TestHarness.MegaBoomConfig.out | grep "PASSED"
 		ret=$?
 
 		if [[ $ret == 0 ]] || true 
@@ -49,7 +49,7 @@ function _ptpx() {
 			make build_pt_dir=${power_path}/"build-pt-"${bmark} \
 				cur_build_pt_dir=${power_path}/"current-pt-"${bmark} \
 				vcs_dir=${_save_path} \
-				icc_dir=/research/d3/cbai/research/chipyard/vlsi/build/chipyard.TestHarness.SmallBoomConfig-ChipTop/syn-rundir
+				icc_dir=/research/d3/cbai/research/chipyard/vlsi/build/chipyard.TestHarness.MegaBoomConfig-ChipTop/syn-rundir
 			cd -
 			cd ${power_path}
 			mv build-pt-${bmark} ${bmark}
@@ -62,7 +62,7 @@ function _ptpx() {
 		fi
 	elif [[ -e ${_save_path}/vcdplus.vpd ]]
 	then
-		cat ${_save_path}/${bmark}.chipyard.TestHarness.SmallBoomConfig.out | grep "PASSED"
+		cat ${_save_path}/${bmark}.chipyard.TestHarness.MegaBoomConfig.out | grep "PASSED"
 		ret=$?
 
 		if [[ $ret == 0 ]] || true 
@@ -77,7 +77,7 @@ function _ptpx() {
 			make build_pt_dir=${power_path}/"build-pt-"${bmark} \
 				cur_build_pt_dir=${power_path}/"current-pt-"${bmark} \
 				vcs_dir=${_save_path} \
-				icc_dir=/research/d3/cbai/research/chipyard/vlsi/build/chipyard.TestHarness.SmallBoomConfig-ChipTop/syn-rundir
+				icc_dir=/research/d3/cbai/research/chipyard/vlsi/build/chipyard.TestHarness.MegaBoomConfig-ChipTop/syn-rundir
 			cd -
 			cd ${power_path}
 			mv build-pt-${bmark} ${bmark}
@@ -91,7 +91,7 @@ function _ptpx() {
 	# This block is left as a candidate
 	# elif [[ ! -e ${power_path}/${bmark}/reports/vcdplus.power.avg.max.report ]]
 	# then
-	# 	cat ${_save_path}/${bmark}.chipyard.TestHarness.SmallBoomConfig.out | grep "PASSED"
+	# 	cat ${_save_path}/${bmark}.chipyard.TestHarness.MegaBoomConfig.out | grep "PASSED"
 	# 	ret=$?
 
 	# 	if [[ $ret == 0 ]] || true 
@@ -104,7 +104,7 @@ function _ptpx() {
 	# 		make build_pt_dir=${power_path}/"build-pt-"${bmark} \
 	# 			cur_build_pt_dir=${power_path}/"current-pt-"${bmark} \
 	# 			vcs_dir=${_save_path} \
-	# 			icc_dir=/research/d3/cbai/research/chipyard/vlsi/build/chipyard.TestHarness.SmallBoomConfig-ChipTop/syn-rundir
+	# 			icc_dir=/research/d3/cbai/research/chipyard/vlsi/build/chipyard.TestHarness.MegaBoomConfig-ChipTop/syn-rundir
 	# 		cd -
 	# 		cd ${power_path}
 	# 		mv build-pt-${bmark} ${bmark}
@@ -127,6 +127,7 @@ function _ptpx() {
 
 function ptpx_f() {
 	file=$1
+	echo DEBUG $file
 	cat $file | \
 		while read bmark
 		do
@@ -139,6 +140,7 @@ function ptpx_f() {
 			fi
 			if [[ -f ${_bmark} ]]
 			then
+				echo "running:" ${bmark}
 				_ptpx ${bmark} ${_save_path} ${_bmark} &
 			else
 				echo $file is wrong
@@ -168,7 +170,7 @@ function ptpx() {
 function post() {
 	if [[ -f failed-list.txt ]]
 	then
-		mv failed-list.txt failed-list.txt.bak
+		mv -f failed-list.txt failed-list.txt.bak
 	fi
 }
 
@@ -180,7 +182,7 @@ do
 		f)
 			if [[ -f $OPTARG ]]
 			then
-				ptpx_f
+				ptpx_f ${OPTARG}
 				wait
 				post
 			else
