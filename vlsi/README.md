@@ -21,10 +21,13 @@ $ ./scripts/build-toolchains.sh riscv-tools # for a normal risc-v toolchain
 ```
 
 * EDA tools plugins requirement
+
 Email to `hammer-plugins-access@lists.berkeley.edu` with a request for plugins.
-- hammer-cadence-plugins
-- hammer-mentor-plugins
-- hammer-synopsys-plugins
+1. hammer-cadence-plugins
+
+2. hammer-mentor-plugins
+
+3. hammer-synopsys-plugins
 
 * Initialize the VLSI environment
 ```bash
@@ -39,12 +42,17 @@ $ source $HAMMER_HOME/sourceme.sh
 ```
 
 * Configure EDA tools environment for Hammer
+
 Configure files including
-- vlsi/env.yml
-- vlsi/example.yml
-- hammer-cadence-plugins/synthesis/genus/defaults.yml
-- hammer-cadence-plugins/par/innovus/defaults.yml
-- hammer-synopsys-plugins/sim/vcs/defaults.yml
+1. vlsi/env.yml
+
+2. vlsi/example.yml
+
+3. hammer-cadence-plugins/synthesis/genus/defaults.yml
+
+4. hammer-cadence-plugins/par/innovus/defaults.yml
+
+5. hammer-synopsys-plugins/sim/vcs/defaults.yml
 
 * VLSI for compilation from Chisel to Verilog
 ```bash
@@ -70,6 +78,7 @@ $ cp sram_behav_models.v generated_src/chipyard.TestHarness.SmallBoomConfig/
 ```
 
 * VLSI for simulation using VCS
+
 Configurate vcs.sh
 ```bash
 $ make sim \
